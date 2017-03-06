@@ -1,0 +1,485 @@
+@charset "utf-8";
+@import"common";
+
+/*********************************
+ * 定义公用的变量，函数等
+ * ******************************/
+//头部header的背景颜色
+$headerBackColor:#c4acc5;
+//分割线的颜色
+$border_color:#e2e2e2;
+//主色
+$baseColor:#996699;
+
+
+//字体大小和颜色
+@mixin fZC($z,$c){
+    font-size: setRem($z);
+    color:$c;
+}
+//左边自适应，右边固定宽度
+@mixin Posi_mr($padd,$wid_r){
+    position: relative;
+    padding-right:$padd;
+    .posi_m{
+        width:100%;
+    }
+    .posi_r{
+        width:$wid_r;
+        position: absolute;
+    }
+}
+//右边自适应，左边边固定宽度
+@mixin Posi_lm($padd,$wid_l){
+    position: relative;
+    padding-left:$padd;
+    >.posi_m{
+        width:100%;
+    }
+    >.posi_l{
+        width:$wid_l;
+        position: absolute;
+    }
+}
+//左边，右边固定宽度，中间自适应
+@mixin Posi_lmr($wid_l,$padd_l,$wid_r,$padd_r){
+    position: relative;
+    padding-left: $padd_l;
+    padding-right: $padd_r;
+    .posi_l{
+        width:$wid_l;
+        position: absolute;
+    }
+    .posi_m{
+        width:100%;
+    }
+    .posi_r{
+        width:$wid_r;
+        position: absolute;
+    }
+}
+
+//并列在一行，形如按钮的列表布局
+@mixin onlineUl($num){
+    .online_li{
+        float:left;
+        width:(100/$num)*1%;
+        @include fZC(24,#999);
+        text-align: center;
+    }
+}
+//页脚定位样式
+%footerFixed{
+    position: fixed;
+    left:0;
+    right:0;
+    height:setRem(100);
+    bottom:0;
+    z-index: 99;
+}
+//mui框架样式修正
+.mui-content{
+    padding-top:setRem(88);
+    background-color: #f4f4f4;
+}
+//mui三级城市级联样式修正
+.mui-poppicker-header .mui-btn{
+    border:none;
+    background-color: transparent;
+    @include fZC(30,#333);
+}
+.mui-poppicker-header,.mui-picker{
+    background-color: #fff;
+}
+//mui弹出框样式修改
+.mui-popup-button{
+    color:#333;
+}
+input[type="text"],input[type="tel"],input[type="password"],input[type="number"]{
+    margin:0;
+    padding:0;
+}
+//轮播（swiper）样式修正
+.banner{
+    width:100%;
+    height:setRem(622);
+    max-height: setRem(622);
+    position:relative;
+}
+.swiper-pagination-bullet:before{
+    content: "" !important;
+    display: inline-block;
+    width:setRem(12);
+    height:setRem(12);
+    background-color: #c3b6ae;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active:before{
+    background-color: #5d5d5b;
+}
+
+
+//字体图标
+.iconfont{
+    font-size:setRem(32);
+    color:#999;
+}
+//按钮初始化
+.btn{
+    height:setRem(104);
+    padding:setRem(20);
+    border: none;
+    background-color: #fff;
+    font-size: setRem(38);
+}
+.btn_block{
+    width:100%;
+}
+.round_box{
+    width:setRem(30);
+    height:setRem(30);
+    border-radius: 50%;
+    background-color: $baseColor;
+    text-align: center;
+    line-height: setRem(30);
+    color:#fff;
+    position: absolute;
+    top:setRem(10);
+    right:setRem(30);
+}
+/***********************************
+ * 公共样式
+ **********************************/
+.header{
+    background-color: $headerBackColor;
+    height: setRem(88);
+    padding:0 setRem(20);
+    position: fixed;
+    z-index: 99;
+    left:0;
+    right:0;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include fZC(30,#fff);
+    .header_l,.header_r{
+        position: absolute;
+        height:100%;
+        display: flex;
+        align-items: center;
+    }
+    .header_l{
+        .icon-fanhui{
+            @include fZC(40,#fff);
+        }
+    }
+    
+    .header_r{
+        right: setRem(20);
+        display: flex;
+        justify-content: flex-end;
+    }
+    .header_con{
+        font-size: setRem(40);
+        color:#fff;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+}
+//顶部导航分类选项卡（默认为我的订单页面样式）
+.fixed_nav{
+    position: fixed;
+    top: setRem(88);
+    left: 0;
+    z-index: 99;
+    background-color: #FFFFFF;
+    border: none;
+    border-bottom: #EEEEEE 1px solid;  
+    height: setRem(90);
+    width: 100%;  
+    a{
+        border: none !important;
+        color: #666666 !important;
+        font-size: setRem(28);
+        height: setRem(90); 
+        @include activeBg(#F8F8F8);
+        span{
+            width: 100%;
+            display: inline-block;
+            height: setRem(50);
+            line-height: setRem(50) !important;
+            border-left: #f0f0f0 1px solid !important;
+            margin-top: setRem(20);
+        } 
+    }
+    .mui-active{
+        background: none !important;
+        color: $baseColor !important;
+        
+    }
+}
+//提示信息弹出框
+.tip_box{
+    width: setRem(290);
+    padding:setRem(20);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: setRem(-70);
+    margin-left: setRem(-145);
+    background-color: #000000;
+    opacity: 0.7;
+    border-radius:3px ;
+    text-align: center;
+    display: none;
+    font-size: setRem(30);
+    color: #FFFFFF;
+    .icon-svg26{
+        font-size: setRem(46);
+        color: #FFFFFF;
+        display: block;
+        padding: setRem(20) 0;
+        margin: 0 auto;
+    }
+    .txt{
+        line-height: 1.6;
+    }
+}
+//懒加载背景图
+.original_img{
+    background:url(../images/loading.jpg);
+    background-size: 100% 100%;
+}
+
+
+//订单列表
+.order_box_pic{
+    width: setRem(186);
+    height: setRem(186);
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    margin:setRem(20) setRem(30);
+    img{
+        width: setRem(186);
+        height: setRem(186);
+    }
+}
+.order_box_txt{
+    width: setRem(480);
+    height: setRem(186);
+    vertical-align: middle;
+    display: inline-block;
+    a{
+        color: #444444;
+        font-size: setRem(30);
+        display: block;
+    }
+    span{
+        margin:setRem(10) 0;
+        color: #ec86bf;
+        font-size: setRem(22);
+        display: block;
+        em{
+            font-size: setRem(30);
+        }
+    }
+    font{
+        color: #666666;
+        font-size: setRem(24);
+    }
+}
+
+//输入加减数量组件
+.numbox{
+    @include Posi_lmr(setRem(60),setRem(60),setRem(60),setRem(60));
+    overflow: hidden;
+    display: inline-block;
+    width:setRem(200);
+    border:1px solid #dddddd;
+    border-radius: setRem(5);
+    height:setRem(60);
+    vertical-align: middle;
+    .numbox_minus,.numbox_plus{
+        border-radius: 0;
+        height:setRem(60);
+        border:none;
+        background-color: transparent;
+        color:#a0a0a0;
+        font-size: setRem(30);
+        outline: none;
+        top:0;
+    }
+    .numbox_minus{
+        border-right:1px solid #dddddd;
+        left:0;
+    }
+    .numbox_plus{
+        border-left:1px solid #dddddd;
+        right:0;
+    }
+    .input_num{
+        border:none;
+        border-radius: 0;
+        height:setRem(60);
+        padding:0;
+        text-align: center;
+        @include fZC(24,#333);
+        line-height: 1.4;
+        margin:0;
+    }
+}
+
+//选项卡菜单页脚
+.footer{
+    display: flex;
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    border-top:1px solid $border_color;
+    background-color: #fff;
+    height:setRem(100);
+    .footer_item{
+        position: relative;
+        flex: 1;
+        height:100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include fZC(18,#a69d8e);
+        .a_home:before{
+            content: "\e6f7";
+        }
+        .a_shop:before{
+            content: "\e605";
+        }
+        .a_mine:before{
+            content:"\e650";
+        }
+    }
+    .round_box{
+        right:setRem(100);
+    }
+    .footer_item.active{
+        color:#c4acc5;
+        .a_home:before{
+            content: "\e604";
+            color:#c4acc5;
+        }
+        .a_shop:before{
+            content: "\e60d";
+            color:#c4acc5;
+        }
+        .a_mine:before{
+            content:"\e65b";
+            color:#c4acc5;
+        }
+    }
+}
+//购物车页脚
+.footer_shop_box{
+    @extend %footerFixed;
+    @extend %border;
+    &:before{
+        border-top:1px solid $border_color;
+    }
+    bottom:setRem(100);
+    background-color: #fff;
+    line-height:setRem(100);
+    overflow: hidden;
+    @include fZC(30,#444);
+    .one_sel, .more_sel{
+        vertical-align: sub;
+    }
+    .footer_shop_l{
+        margin:0 0 0 setRem(20);
+        font-size: setRem(33);
+        padding-top: setRem(7);
+        input[type="checkbox"]{
+            margin-top: setRem(20);  
+        }
+        span{
+            display: inline-block;
+            margin-left:setRem(10);
+        }
+    }
+    .footer_shop_price{
+        padding-top: setRem(5);
+        .price_num{
+            vertical-align: setRem(-2);
+        }
+        margin-right:setRem(20);
+    }
+    .footer_shop_btn{
+        width:setRem(245);
+        white-space: nowrap;
+        text-align: center;
+        @include fZC(38,#fff);
+        background-color: $baseColor;
+    }
+}
+//结算页脚
+.footer_settlement{
+    @extend %footerFixed;
+    line-height: setRem(100);
+    padding-left:setRem(20);
+    font-size: setRem(36);
+    background-color: #fff;
+    .btn{
+        float:right;
+        line-height: setRem(100);
+        height: setRem(100);
+        width:setRem(200);
+        border:none;
+        border-radius: 0;
+        background-color: $baseColor;
+        color:#fff;
+        padding:0;
+        font-size: setRem(38);
+    }
+    .price{
+        color:$baseColor;
+    }
+    .text{
+        color:#333;
+    }
+}
+//详情页面页脚
+.footer_detail{
+    @extend %footerFixed;
+    @extend %border;
+    &:before{
+        border:1px solid $border_color;
+    }
+    background-color: #fff;
+    .text_box{
+        width:setRem(150);
+        text-align: center;
+        height:100%;
+        position: relative;
+        padding-top:setRem(4);
+        @include fZC(18,#999);
+        .iconfont{
+            @include fZC(48,#999);
+        }
+        .text{
+            margin-top:setRem(-8);
+        }
+    }
+    .btn{
+        width:setRem(300);
+        border-radius: 0;
+        @include fZC(38,#fff);
+        height:100%;
+    }
+    .join_cart_btn{
+        background-color: #ffa200;
+    }
+    .go_details_btn{
+        background-color: red;
+    }
+}

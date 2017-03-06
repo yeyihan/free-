@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-购物车(无商品)</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="shop_car">
+			<header class="header">
+				<div class="header_con">
+					购物车
+				</div>
+			</header>
+			
+				
+			<!--购物车为空时-->
+			<div class="empty_con_box">
+				<div class="icon_gouwuche">
+					<i class="iconfont icon-gouwuche"></i>
+				</div>
+			    <p class="replay">您的购物车还空空如也！</p>
+			    <p class="replay">快去挑选您喜欢的宝贝吧！</p>
+			    <button class="go_gouwu">去逛逛</button>
+			</div>
+			
+			
+			<div class="footer_shop_box clear">
+           		<div class="footer_shop_l mui-pull-left" id="allLabel">
+           			<input type="checkbox" name="payment" id="allcheck" class="more_sel">
+           			<span>全选</span>
+           		</div>
+           		<div class="mui-pull-right footer_shop_r">
+           			<div class="footer_shop_price mui-pull-left">
+						<span>合计:</span>
+						<span class="name_blue">￥<span id="result">688888.88</span></span>
+					</div>
+					<div class="footer_shop_btn mui-pull-right" id="subbtn">
+						结算(<span id="shop_num">99999</span>)
+					</div>
+           		</div>
+
+			</div>
+			<footer class="footer">
+				<a href="" class="footer_item">
+					<i class="iconfont a_home"></i>
+					<div>
+						首页
+					</div>
+				</a>
+				<a href="" class="footer_item active">
+					<i class="iconfont a_shop"></i>
+					<div>
+						购物车
+						
+					</div>
+				</a>
+				<a href="" class="footer_item">
+					<i class="iconfont a_mine"></i>
+					<div>
+						我的
+					</div>
+				</a>
+			</footer>
+            
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有JS start-->
+		<script src="../assets/js/ljk.js" type="text/javascript" charset="utf-8"></script>
+		<!--页面独有JS end-->
+		<script>
+		
+			//监听数字加减和输入（numbox）组件
+			listFun.numbox();
+			
+			//删除操作
+		　　 	listFun.deleteTishi({e:'.delete'},newPrice);
+		
+			//全选
+			listFun.allChcek({allcheck:"#allcheck",itemcheck:".itemcheck"});
+			
+			//购物车总价计算
+			//初始化数据
+			newPrice();
+			//监听输入框
+			listFun.shopPriceInput({
+				ele:".shop_item",
+				input_num:".input_num",
+				price_num:".price_num",
+				checkClass:".itemcheck",
+				resultId:"#result",
+				shop_num:"#shop_num"
+			});
+			//监听多选框
+			listFun.shopPriceCheck({
+				ele:".shop_item",
+				input_num:".input_num",
+				price_num:".price_num",
+				checkClass:".itemcheck",
+				resultId:"#result",
+				shop_num:"#shop_num"
+			});
+			//监听全选框
+			listFun.shopPriceAllCheck({
+				ele:".shop_item",
+				input_num:".input_num",
+				price_num:".price_num",
+				checkClass:".itemcheck",
+				allCheck:"#allcheck",
+				resultId:"#result",
+				shop_num:"#shop_num"
+			});
+			//监听加减号按钮
+			$('.numbox_plus').on('click',function(){
+				newPrice();
+			})
+			$('.numbox_minus').on('click',function(){
+				newPrice();
+			})
+			//计算总价，并赋值总价和数量到相应位置
+			function newPrice(){
+				var getPrice = listFun.shopPrice({
+					ele:".shop_item",
+					input_num:".input_num",
+					price_num:".price_num",
+					checkClass:".itemcheck"
+				});
+				$("#result").text(getPrice.result);
+				$("#shop_num").text(getPrice.num);
+			}
+		</script>
+	</body>
+</html>

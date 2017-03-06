@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-常用地址</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/lib/mui/mui.picker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+        
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="used_address">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					常用地址
+				</div>
+			</header>
+			
+			<div class="mui-content">
+				
+				<div class="confirm_top">
+					<a href="add_address.html" class="block_a clear no_address">
+						<div class="mui-pull-left left clear">
+        					<i class="iconfont icon-15 mui-pull-left"></i>
+        					<div class="mui-pull-left">
+								<p class="man_msg">
+        							新建收货地址
+        						</p>
+        					</div>
+        				</div>
+        				<div class="mui-pull-left right">
+        					<i class="iconfont icon-xiangyoujiantou"></i>
+        				</div>
+					</a>
+				</div>
+				
+				<!--没有数据时-->
+				<!--<div class="empty_con_box">
+					<div class="icon_gouwuche">
+						<i class="iconfont icon-dizhi"></i>
+					</div>
+				    <p class="replay">您尚未添加收货地址哦~</p>
+				</div>-->
+				<!--有数据时-->
+				<div class="used_address_con">
+					<ul>
+						<li class="adr_li">
+							<div>
+								<p class="fc_333">
+									<span>张三</span>
+									<span>135****2512</span>
+								</p>
+								<p class="fc_666">
+									四川省成都市双流县天府三街福年广场 
+								</p>
+							</div>
+							<div class="handle">
+								<div class="handle_childe">
+									<!--input单选框中的id与label标签中的for一致，这样可以使得在点击文字的时候，也可以选中单选框，请后台取数据的时候注意添加下-->
+									<input type="radio" name="payment" id="address_1" checked class="one_sel itemcheck">
+									<label for="address_1">默认地址</label>
+								</div>
+								<a href="edit_address.html" class="handle_childe">
+									<i class="iconfont icon-bianji"></i>
+									<span>编辑</span>
+								</a>
+								<div class="handle_childe delete">
+									<i class="iconfont icon-shanchu"></i>
+									<span>删除</span>
+								</div>
+							</div>
+						</li>
+						<li class="adr_li">
+							<div>
+								<p class="fc_333">
+									<span>张三</span>
+									<span>135****2512</span>
+								</p>
+								<p class="fc_666">
+									四川省成都市双流县天府三街福年广场 
+								</p>
+							</div>
+							<div class="handle">
+								<div class="handle_childe">
+									<input type="radio" name="payment" id="address_2" class="one_sel itemcheck">
+									<label for="address_2">设为默认</label>
+								</div>
+								<a href="edit_address.html" class="handle_childe">
+									<i class="iconfont icon-bianji"></i>
+									<span>编辑</span>
+								</a>
+								<div class="handle_childe delete">
+									<i class="iconfont icon-shanchu"></i>
+									<span>删除</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+		<!--删除成功弹出框-->
+		<div class="tip_box" id="info">
+			<i class="iconfont icon-svg26"></i>
+			<span class="txt">原密码错误</span>
+		</div>
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有CSS、JS start-->
+		<script src="../assets/js/ljk.js"></script>
+		<!--页面独有CSS、JS end-->
+		<script>
+			
+			$(".delete").on('tap', function() {
+				var btnArray = ['否', '是'];
+				var $this = $(this);
+				mui.confirm('是否删除，确认？', ' ', btnArray, function(e) {
+					if (e.index == 1) {
+						info.innerText = '删除成功！';
+						info.style.display="block";
+						$this.parents(".adr_li").remove();
+						setTimeout(function(){info.style.display="none";}, 2000);
+					} else {
+						info.innerText = ''
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

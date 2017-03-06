@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-结算</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="settlement">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					结算
+				</div>
+				<!--<div class="header_r">
+					完成
+				</div>-->
+			</header>
+			
+			<div class="mui-content content_padding">
+				
+				<div class="list_box">
+					<div class="title clear">
+						<span class="mui-pull-left">商品清单</span>
+						<span class="mui-pull-right title_small">2件</span>
+					</div>
+					<ul class="list_table_ul list_con">
+						<li class="list_table_li clear">
+							<span class="mui-pull-left mui-ellipsis">好吃零食酥脆正品</span>
+							<span class="mui-pull-right price">￥<span class="set_goods_price">1390.00</span></span>
+						</li>
+						<li class="list_table_li clear">
+							<span class="mui-pull-left mui-ellipsis">[1袋包邮]四川内江特产黄老五花生酥糖</span>
+							<span class="mui-pull-right price">￥<span class="set_goods_price">1390.00</span></span>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="list_box">
+					<div class="title">
+						<span class="">支付方式</span>
+					</div>
+					<ul class="list_table_ul radio_list">
+						<li class="list_table_li">
+							<label for="zhifubao">
+								<div class="mui-pull-left">
+									<input type="radio" name="payment" id="zhifubao" checked class="one_sel itemcheck">
+								</div>
+								<i class="iconfont icon-iconfontzhifubao"></i>
+								<span class="text">支付宝支付</span>
+							</label>
+						</li>
+						<li class="list_table_li active">
+							<label for="weixin">
+								<div class="mui-pull-left">
+									<input type="radio" name="payment" id="weixin" checked class="one_sel itemcheck">
+								</div>
+								<i class="iconfont icon-weixin"></i>
+								<span class="text">微信支付</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+				
+				
+				<div class="list_box">
+					<ul class="list_table_ul list_con">
+						<li class="list_table_li clear">
+							<span class="mui-pull-left">商品金额</span>
+							<span class="mui-pull-right price">￥<span id="goods_jine">360.00</span></span>
+						</li>
+						<li class="list_table_li clear">
+							<span class="mui-pull-left">运费</span>
+							<span class="mui-pull-right price">￥<span id="yunfei">20.00</span></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<footer class="footer_settlement">
+				<span class="text">实付款：</span>
+				<span class="price">￥<span id="result">3962.00</span></span>
+				<button class="btn">立即支付</button>
+			</footer>	
+			
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有JS start-->
+    	<script src="../assets/js/ljk.js" type="text/javascript" charset="utf-8"></script>
+    	<script type="text/javascript">
+    		$(function(){
+                
+                //点击支付方式，显示高亮
+                listFun.listRadio();
+    		})
+    	</script>
+	</body>
+</html>

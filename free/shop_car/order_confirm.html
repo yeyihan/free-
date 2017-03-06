@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-确认订单</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="order_confirm">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					确认订单
+				</div>
+			</header>
+			
+			<div class="mui-content content_padding">
+				<div class="confirm_top">
+					<!--没有收货地址的情况 star-->
+					<a href="" class="block_a clear no_address">
+						<div class="mui-pull-left left clear">
+        					<i class="iconfont icon-15 mui-pull-left"></i>
+        					<div class="mui-pull-left">
+								<p class="man_msg">
+        							新建收货地址
+        						</p>
+        					</div>
+        				</div>
+        				<div class="mui-pull-left right">
+        					<i class="iconfont icon-xiangyoujiantou"></i>
+        				</div>
+					</a>
+					<!--没有收货地址的情况 star-->
+					
+					
+					<!--有收货地址的情况 star-->
+        			<!--<a href="" class="block_a clear">
+        				<div class="mui-pull-left left clear">
+        					<i class="iconfont icon-dizhi mui-pull-left"></i>
+        					<div class="mui-pull-left">
+        						<p class="man_msg">
+        							<span class="text_justify">联系人</span>：
+        							<span>杨先生</span>
+        						</p>
+        						<p class="man_msg">
+        							<span class="text_justify">电话</span>：
+        							<span>13856425147</span>
+        						</p>
+        						<p class="man_address">成都市 高新区 吉泰路福年广场</p>
+        					</div>
+        					
+        				</div>
+        				<div class="mui-pull-left right">
+        					<i class="iconfont icon-xiangyoujiantou"></i>
+        				</div>
+        			</a>-->
+        			<!--有收货地址的情况 end-->
+            	</div>
+				
+				<div class="list_box">
+					<div class="title clear">
+						<span class="mui-pull-left">商品信息</span>
+						<span class="mui-pull-right title_small">2件</span>
+					</div>
+					
+					<!--商品信息列表 star-->
+					<div class="goods_box clear">
+						<div class="img_box mui-pull-left">
+							<img src="../assets/images/shop_img.png" alt="" />
+						</div>
+						<div class="goods_con mui-pull-left">
+							<p class="goods_con_name mui-ellipsis-2">黄老五花生酥广告黄老五花生米花酥黄老五花生酥广告黄老五花生米花酥</p>
+							<p class="goods_con_msg">椒盐味</p>
+							<div class="clear goods_con_num">
+								<span class="mui-pull-left f_996699"><small>￥</small>345.00</span>
+								<span class="mui-pull-right">×1</span>
+							</div>
+						</div>
+					</div>
+					<div class="goods_box clear">
+						<div class="img_box mui-pull-left">
+							<img src="../assets/images/shop_img.png" alt="" />
+						</div>
+						<div class="goods_con mui-pull-left">
+							<p class="goods_con_name mui-ellipsis-2">黄老五花生酥广告黄老五花生米花酥黄老五花生酥广告黄老五花生米花酥</p>
+							<p class="goods_con_msg">椒盐味</p>
+							<div class="clear goods_con_num">
+								<span class="mui-pull-left f_996699"><small>￥</small>345.00</span>
+								<span class="mui-pull-right">×1</span>
+							</div>
+						</div>
+					</div>
+					<!--商品信息列表 end-->
+					
+					<ul class="list_table_ul">
+						<li class="list_table_li clear title">
+							<div class="mui-pull-left">配送方式</div>
+							<div class="mui-pull-right">
+								<span>快递 配送</span>
+							</div>
+						</li>
+						<li class="list_table_li title textarea_box">
+							<span>买家留言：</span>
+							<textarea name="" rows="3" cols="4" placeholder="选填，可填写您与卖家达成一致的要求"></textarea>
+						</li>
+						<li class="list_table_li text_r title">
+							<span>共<span>1</span>件商品</span>
+							<span>合计：</span>
+							<span class="f_996699"><small>￥</small>345.00</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<footer class="footer_settlement">
+				<span class="text">合计：</span>
+				<span class="price">￥<span id="result">3962.00</span></span>
+				<button class="btn">提交订单</button>
+			</footer>	
+			
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有JS start-->
+    	<script src="../assets/js/ljk.js" type="text/javascript" charset="utf-8"></script>
+    	<script type="text/javascript">
+    		$(function(){
+
+    		})
+    	</script>
+	</body>
+</html>

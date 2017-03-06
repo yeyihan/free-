@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-我的订单</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="order">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					我的订单
+				</div>
+			</header>
+			
+			<div class="mui-content">
+				<!--订单选项卡 start-->
+			    <div class="mui-segmented-control fixed_nav">
+				    <a class="mui-control-item mui-active" href="#item1"><span>全部</span></a>
+				    <a class="mui-control-item" href="#item2"><span>待支付</span></a>
+				    <a class="mui-control-item" href="#item3"><span>待完成</span></a>
+				    <a class="mui-control-item" href="#item4"><span>已完成</span></a>
+				</div>
+				<!--订单选项卡 end-->
+				
+				<!--全部 start-->
+				<div class="order_content mui-control-content mui-active" id="item1">
+					
+					
+					<!--没有数据时-->
+					<!--<div class="empty_con_box">
+						<div class="icon_gouwuche">
+							<i class="iconfont icon-dingdan"></i>
+						</div>
+					    <p class="replay">您还没有任何订单哦~</p>
+					</div>-->
+					<!--有数据时-->
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>
+						
+						<div class="order_box_foot">
+							<p class="order_box_wait"><span>待支付</span><a href="#">去支付</a><em>取消订单</em></p>
+						</div>
+					</div>
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>
+						<div class="order_box_foot">
+							<p class="order_box_finish"><span>已完成</span><a href="#">删除订单</a></p>
+						</div>
+					</div>
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>
+						<div class="order_box_foot">
+							<p class="order_box_no"><span>已取消</span><a href="#">删除订单</a></p>
+						</div>
+					</div>
+				</div>
+				<!--全部 end-->
+				
+				<!--待支付 start-->
+				<div class="order_content mui-control-content" id="item2">
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>
+						<div class="order_box_foot">
+							<p class="order_box_wait"><span>待支付</span><a href="#">去支付</a><em>取消订单</em></p>
+						</div>
+					</div>
+				</div>
+				<!--待支付 end-->
+				
+				<!--待完成 start-->
+				<div class="order_content mui-control-content" id="item3">
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>						
+						<div class="order_box_foot">
+							<p class="order_box_wait"><span>待完成</span><a href="#">取消退款</a><em>退款中</em></p>
+						</div>
+					</div>
+				</div>
+				<!--待完成 end-->
+				
+				<!--已完成 start-->
+				<div class="order_content mui-control-content" id="item4">
+					<div class="order_box">
+						<div class="order_box_content">
+							<div class="order_box_pic">
+								<a href="#"><img class="original_img" data-original="../assets/images/shop_img.png"></a>
+							</div>
+							<div class="order_box_txt">
+								<a href="#">【半永久纹绣】纯天然植物色素 韩式半永久妆美瞳线</a>
+								<span>￥<em>588</em></span>
+								<font>数量：X 1</font>
+							</div>
+						</div>
+						<div class="order_box_foot">
+							<p class="order_box_wait"><span>已退款</span><a href="#">删除订单</a><em>已退款</em></p>
+						</div>
+					</div>
+				</div>
+				<!--已完成 end-->
+			</div>
+
+			
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<script src="../assets/lib/imgloading/imgloading.js"></script>
+		<script>
+			$("img.original_img").lazyload({});
+		</script>
+	</body>
+</html>

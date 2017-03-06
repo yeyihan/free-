@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-商品详情</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="goods_detail">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					商品详情
+				</div>
+			</header>
+			
+				
+			<div class="mui-content content_padding">
+				<!-- 幻灯 start-->
+	            <div class="banner">
+	                <div class="swiper-container swiper-container-horizontal">
+	                    <div class="swiper-wrapper">
+	                        <a href="#" class="swiper-slide"  style="background-image:url(../assets/images/slide.png)"></a>
+	                        <a href="#" class="swiper-slide"  style="background-image:url(../assets/images/no_pic.png)"></a>
+	                    </div>
+	                    <div class="swiper-pagination"></div>
+	                </div>
+	            </div>
+	            <!-- 幻灯 end-->
+	            
+	            <div class="benner_bottom">
+	            	<div class="info_title mui-ellipsis-2">
+	            		DJI大疆精灵 Phantom 3 Professional遥控航拍无人机遥控航拍无人机遥控航拍无人机遥控航拍无人机遥控航拍无人机遥控航拍无人机
+	            	</div>
+					<div class="price_box">
+	            		<span class="fc_c4acc6 fz_36">
+            				<small>￥</small><span>200.00</span>
+	            		</span>
+	            		<span>
+            				<span>市场价：</span><span class="old_price">￥300.00</span>
+	            		<span>
+	            	</div>
+				</div>
+				
+				<div class="list_box">
+					<ul class="list_table_ul list_con">
+						<li class="list_table_li">
+							<span class="">配送：</span>
+							<span class="fc_666">成都 发货</span>
+						</li>
+						<li class="list_table_li">
+							<span class="">说明：</span>
+							<span class="fc_666">订单满200包邮</span>
+						</li>
+					</ul>
+				</div>
+	            
+	            <!--图文详情-->
+	            <div id="slider" class="mui-slider">
+	            	<div class="slider_top">
+	            		<div id="sliderSegmentedControl" class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item1mobile">图文详情</a>
+							<a class="mui-control-item" href="#item2mobile">购买须知</a>
+						</div>
+	            	</div>
+					
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-control-content goods_img mui-active">
+							<!--如果没有数据-->
+							<div class="no_goods_img">
+								<i class="iconfont icon-tuwenxiangqing"></i>
+								<span>暂无图文详情</span>
+							</div>
+							<!--有数据则直接显示-->
+							<!--<img src="../assets/images/goods_1.png" alt="" />
+							<img src="../assets/images/goods_2.png" alt="" />-->
+						</div>
+						<div id="item2mobile" class="mui-control-content">
+							<ul class="mui-table-view list_p">
+								<li class="mui-table-view-cell">
+									<p class="left_border info_li_title_p">交付方式</p>
+									<p class="info_li_cont">
+										自提：用户可以自己到商家店里自提，此方式为免费 <br />
+										送货上门：由商家送货上门，此方式为收费
+									</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="left_border info_li_title_p">续租计费</p>
+									<p class="info_li_cont">
+										超过免计费时间但未达到1天的费用时按小时计费，满1天的费用时按天计费
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+	            
+	            
+	            
+	            
+			</div>
+			
+			<!--页脚-->
+			<footer class="clear footer_detail">
+		    	<div class="mui-pull-left text_box">
+		    		<i class="iconfont icon-jinlingyingcaiwangtubiao07"></i>
+		    		<div class="round_box">99</div>
+		    		<div class="text">
+		    			购物车
+		    		</div>
+		    	</div>
+		    	<button class="mui-pull-left btn join_cart_btn" id="join_cart_btn">加入购物车</button>
+		    	<button class="mui-pull-left btn go_details_btn">提交订单</button>
+		    </footer>
+            
+		</div>
+		
+		
+		
+	<!--点击购买弹出框-->
+			<div id="select_prop" class="mui-popover mui-popover-bottom mui-popover-action ">
+                
+                <div class="prop-content">
+                    <span class="small-img">
+                    	<img src="../assets/images/Square3.png"  />
+                    </span>  
+                    <a href="#select_prop">
+                    	<i class="close-btn">×</i>
+                    </a>
+                    <div class="goods_box">
+                        <p class="goods_name">
+                        	DJI大疆精灵 Phantom
+                        </p>
+                        <p><span class="price_small">￥</span><span class="price_big">125.00</span></p>
+                    </div>
+                    <div class="prop">
+                    	<div class="one">
+                            <div class="title">套餐选择</div>
+                            <div>
+	    						<span class="btn_line active">UIS 87 高清500w像素</span>
+	    						<span class="btn_line">UIS 87 高清500w像素</span>
+	    						<span class="btn_line">UIS 87 高清500w像素</span>
+	    						<span class="btn_line">UIS 87 高清500w像素</span>
+                            </div>
+                        </div>
+                        <div class="one">
+                            <div class="title">数量</div>
+                            <div class="posi_lmr numbox">
+	            			    <button class="posi_l numbox_minus" type="button">-</button>
+	            			    <input class="posi_m input_num" type="tel" value="1"/>
+	            			    <button class="posi_r numbox_plus" type="button">+</button>
+	            			</div>
+                        </div>
+                    </div>
+                
+	                <div class="confirm-btn">
+	                    <a href="#">确定</a>
+	                </div>
+                </div>
+            </div>	
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有JS start-->
+		<link rel="stylesheet" type="text/css" href="../assets/lib/swiper/swiper.min.css"/>
+		<script src="../assets/lib/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../assets/js/ljk.js" type="text/javascript" charset="utf-8"></script>
+		<!--页面独有JS end-->
+		<script>
+			window.onload = function() {
+	        	//调用轮播插件
+	            tools.swiper('.swiper-container');
+	           //点击加入购物车，弹出弹框
+	            $('.btn').click(function(){
+	                mui('#select_prop').popover('toggle');    
+	            });
+	            
+	            //数量加减
+	            var num = 1;
+	            $('.numbox button').click(function(){
+	                if( $(this).hasClass('numbox_minus') && num != 1){
+	                    --num;   
+	                } else if( $(this).hasClass('numbox_plus') ){
+	                    ++num;
+	                }
+	                $('.input_num').val(num);
+	            });
+	            
+	            //点击确认，应当隐藏弹框
+	            $(".confirm-btn").click(function(){
+	            	mui('#select_prop').popover('toggle');   
+	            })
+	            
+	            //点击套餐类型，切换样式
+				listFun.btnLine();
+	        }
+		</script>
+	</body>
+</html>

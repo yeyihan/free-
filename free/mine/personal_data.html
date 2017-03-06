@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-修改个人资料</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/lib/mui/mui.picker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+        
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="personal_data">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					修改个人资料
+				</div>
+			</header>
+			
+			<div class="mui-content">
+				<a class="header_box">
+					<div class="header_img_box">
+						<img src="../assets/images/header.png" alt="" />
+					</div>
+					<span class="text">修改头像</span>
+					<i class="iconfont icon-xiangyoujiantou"></i>
+				</a>
+				
+				<ul class="edit_ul">
+					<li class="flex_li">
+						<div class="left">昵称</div>
+						<div class="flex_r">
+							<input type="text" name="" id="" class="" value="大王叫我来巡山" />
+							<i class="iconfont icon-xiangyoujiantou"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="left">性别</div>
+						<div class="flex_r" id="sex_box">
+							<span class="address" id="sex">女</span>
+							<i class="iconfont icon-xiangyoujiantou"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="left">生日</div>
+						<div class="flex_r" data-options='{"type":"date"}' id="date_box">
+							<span class="address" id="date_text">2016-11-07</span>
+							<i class="iconfont icon-xiangyoujiantou"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="left">地区</div>
+						<div class="flex_r" id="address_box">
+							<span class="address" id="address">四川省 成都市 高新区</span>
+							<i class="iconfont icon-xiangyoujiantou"></i>
+						</div>
+					</li>
+				</ul>
+				
+				<button class="btn btn_block sub_box">保存修改</button>
+				
+			</div>
+
+			
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有CSS、JS start-->
+		
+		<script src="../assets/lib/mui/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../assets/lib/mui/city.data.js"></script>
+		<script src="../assets/lib/mui/city.data-3.js"></script>
+		<!--页面独有CSS、JS end-->
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+
+					//性别选择
+					var sexPicker = new $.PopPicker();
+					sexPicker.setData([{
+						value: 'man',
+						text: '男'
+					}, {
+						value: 'woman', 
+						text: '女'
+					}]);
+					var showUserPickerButton = doc.getElementById('sex_box');
+					var userResult = doc.getElementById('sex');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						sexPicker.show(function(items) {
+							userResult.innerText = items[0].text;
+						});
+					}, false);
+
+					//选择日期
+					var date_box = doc.getElementById("date_box");
+					var date_text = doc.getElementById("date_text");
+					var optionsJson = date_box.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var picker = new $.DtPicker(options);
+					date_box.addEventListener("tap",function(){
+						picker.show(function(rs) {
+							date_text.innerText = rs.text;
+						});
+					});
+					
+					//城市选择
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('address_box');
+					var cityResult3 = doc.getElementById('address');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+						cityResult3.innerText = (items[0] || {}).text + " " + (items[1] || {}).text + " " + ((items[2] || {}).text || "");
+						});
+					}, false);
+					
+					
+				});
+			})(mui, document);
+		</script>
+	</body>
+</html>

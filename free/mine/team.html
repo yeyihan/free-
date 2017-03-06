@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 start -->
+   <head>
+        <title>自由自在-我的团队</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/zel.css"/>
+        
+        <!--公共JS start-->
+		<script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<script type="text/javascript" src="../assets/js/common.js" ></script>
+		<!--公共JS end-->
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="page_team">
+			<header class="header">
+				<div class="header_l">
+					<i class="iconfont icon-fanhui mui-action-back"></i>
+				</div>	    	
+		    	<span class="header_con">我的团队</span>
+		    </header>
+		    			
+			<div class="mui-content">
+				<!--我的团队-->			    			    
+			    <div class="mui-segmented-control team_nav">
+			        <a class="mui-control-item mui-active" href="#item1"><span>总经销商(321)</span></a>
+			        <a class="mui-control-item" href="#item2"><span>省级经销商(93)</span></a>
+			        <a class="mui-control-item" href="#item3"><span>市级经销商(228)</span></a>
+			    </div>
+			    
+			    <!--总经销商 -->
+			    <div class="integral_content mui-control-content mui-active" id="item1">
+			    	
+			    	<!--有数据-->
+			    	<div class="my_team_box">
+			    		<div class="my_team_head">
+			    			<span class="fl">成员信息</span>
+			    			<span class="fr">累计佣金/累计销售额</span>
+			    		</div>
+			    		<div class="my_team_content">
+			    			<ul id="list">
+			    			</ul>
+			    		</div>
+			    	</div>
+			    	<!--有数据-->
+			    	
+			    	<!--无数据-->
+				    <!--<div class="no_data">
+				    	<img src="../assets/images/1_09.png"/>
+				    	<span>暂无团队</span>
+				    </div>-->
+				    <!--无数据-->
+			    </div>
+			    <!--总经销商 -->
+			    
+			    <!--省级经销商-->
+			    <div class="integral_content mui-control-content" id="item2">
+			    	<div class="my_team_box">
+			    		<div class="my_team_head">
+			    			<span class="fl">成员信息</span>
+			    			<span class="fr">累计佣金/累计销售额</span>
+			    		</div>
+			    		<div class="my_team_content">
+			    			<ul>
+			    				<li>
+			    					<div class="my_team_l">
+			    						<div class="my_team_pic"><a href="#"><img src="../assets/images/1_04.jpg"></a></div>
+			    						<div class="my_team_txt">
+			    							<span>李丽丽</span>
+			    							<p>10个成员</p>
+			    						</div>
+			    					</div>
+			    					<div class="my_team_r">
+			    						<span>+99.2</span>
+			    						<font>300</font>
+			    					</div>
+			    				</li>
+			    				
+			    			</ul>
+			    		</div>
+			    	</div>
+			    </div>
+			    <!--省级经销商-->
+			    
+			    <!--市级经销商-->
+			    <div class="integral_content mui-control-content" id="item3">
+			    	<div class="my_team_box">
+			    		<div class="my_team_head">
+			    			<span class="fl">成员信息</span>
+			    			<span class="fr">累计佣金/累计销售额</span>
+			    		</div>
+			    		<div class="my_team_content">
+			    			
+			    		</div>
+			    	</div>
+			    </div>
+			    <!--市级经销商-->
+			    
+			    
+			    <!--我的团队-->
+			</div>
+		</div>	
+	<div class="debug" onclick="window.location.reload()">debug</div>
+	<script type="text/javascript" src="../assets/js/scrollPage.js" ></script>
+	<script>
+		//默认加载评论
+//	tools.scrollPage({url:'../ajax.php',msg:'还没有评论哦~'});
+//	$('#list3').on('swipeup',function  () {
+//		alert("1");
+//	})
+	page.scrollPage({
+		url:'../ajax.php',
+	});
+	</script>
+	</body>
+</html>

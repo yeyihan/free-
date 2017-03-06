@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<!-- 公共头部 star -->
+	<head>
+		<title>自由自在-新增收货地址</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="MobileOptimized" content="750">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+        <!--公共样式 start -->
+       	<link rel="stylesheet" href="../assets/lib/mui/mui.min.css" />
+       	<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css"/>
+        <!--公共样式 end -->
+        
+        <!--页面样式 -->
+        <link rel="stylesheet" type="text/css" href="../assets/lib/mui/mui.picker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/ljk.css"/>
+        
+        <!--公共JS start-->
+        <script type="text/javascript" src="../assets/lib/jquery/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/js/common.js" ></script>
+        <!--公共JS end-->
+        
+    </head>
+    <!-- 公共头部 end -->
+	<body>
+		<div class="warp" id="edit_address">
+			<header class="header">
+				<div class="header_l mui-action-back">
+					<i class="iconfont icon-fanhui"></i>
+				</div>
+				<div class="header_con">
+					新增收货地址
+				</div>
+			</header>
+			
+			<div class="mui-content">
+				<ul class="edit_ul">
+					<li class="flex_li">
+						<div class="text_justify left">联系人</div>
+						<div class="flex_r">
+							<input type="text" name="" id="" class="input_clear" placeholder="输入联系人" value="" />
+							<i class="iconfont icon-iconfontguanbi2"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="text_justify left">联系电话</div>
+						<div class="flex_r">
+							<input type="text" name="" id="" class="input_clear" placeholder="输入联系电话" value="" />
+							<i class="iconfont icon-iconfontguanbi2"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="text_justify left">所在地区</div>
+						<div class="flex_r" id="address_box">
+							<span class="address" id="address">四川省成都市高新区</span>
+							<i class="iconfont icon-xiangyoujiantou"></i>
+						</div>
+					</li>
+					<li class="flex_li">
+						<div class="text_justify left">详细地址</div>
+						<div class="flex_r">
+							<input type="text" name="" id="" class="input_clear" placeholder="输入详细地址" value="" />
+							<i class="iconfont icon-iconfontguanbi2"></i>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="sub_box">
+					<button class="btn btn_block">保存</button>
+				</div>
+				
+			</div>
+
+			
+		</div>
+		
+		
+		
+		<div class="debug" onclick="window.location.reload()">debug</div>
+		
+		<script type="text/javascript" src="../assets/lib/mui/mui.min.js" ></script>
+		<!--页面独有CSS、JS start-->
+		
+		<script src="../assets/lib/mui/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../assets/lib/mui/city.data.js"></script>
+		<script src="../assets/lib/mui/city.data-3.js"></script>
+		<!--页面独有CSS、JS end-->
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('address_box');
+					var cityResult3 = doc.getElementById('address');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.innerText = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+		<script>
+			$(function(){
+				tools.inputClear({
+					iconName:".icon-iconfontguanbi2",
+					inputClass:".input_clear",
+				});
+			})
+			
+			
+		</script>
+	</body>
+</html>
